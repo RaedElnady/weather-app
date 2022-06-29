@@ -1,0 +1,359 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <title>Weather App</title>
+        <meta name="description" content="">
+        <meta name="author" content="Raed Elnady - Route Academy">
+        
+    </head>
+
+    <body>
+
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          
+          <a class="navbar-brand" href="#">Weather App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item">
+                <a class="nav-link active fw-bold" href="#">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">News</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Live Cameras</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Photos</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacts</a>
+              </li>
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+      <section class="p-3">
+
+        
+        <div class="container">
+          <div class="row">
+            <!-- Start left Main Section -->
+            <div class="col-md-9 pt-2">
+              
+              <div class="container d-flex mb-3">
+                <div class="d-flex w-50">
+                  <input id="search-input" class="form-control me-2" type="search" placeholder="Search for location" aria-label="Search">
+                  <button id="search-submit" class="btn btn-outline-success"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+                <div class="current-location ms-5 mt-1">
+                  <h5><i class="fa-regular fa-clock me-1"></i> : <span id="currentDate">Doha</span> , <span id="currentTime"></span></h5>
+                </div>
+              </div>
+
+              <div class="container-fluid">
+                <div class="row text-white">
+                  <div class="col-md-6">
+                    <div class="weather-box ps-4 py-2">
+                      <div class="weather-box-title">
+                        
+                        <h5 class=""> 
+                          <i class="fa-solid fa-cloud"></i>
+                          Weather Today
+                        </h5>
+                      </div>
+                      <div class="weather-box-temperature">
+                      
+                        <h3><span id="max-temp">30</span>°C / 
+                          <span class="text-white fs-5"><span id="min-temp">10</span>°C</span>
+                        
+                        </h3>
+                        <h4>Feels Like <span id="feel-like">50</span>°C</h4>
+                        <h6 id="weather-status">Partly Cloudy</h6>
+                        <img id="weather-day-icon" src="" alt="">
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="air-box px-3 py-2">
+                      <div class="weather-box-title">
+                        
+                        <h5 class=""> 
+                          <i class="fa-solid fa-wind"></i>
+                          Wind Today
+                        </h5>
+                      </div>
+                      <div class="wind-box-temperature">
+                        
+                        <div class="my-1">
+                          <span>Degree </span>
+                          <span id="wind-degree">350</span>
+                        </div>
+
+                        <div class="my-1">
+                          <span>Speed </span>
+                          <span id="wind-kph">10</span><span> KPH</span>
+                        </div>
+
+                        <div class="my-2"> 
+                          <span>Direction </span>
+                          <span id="wind-dir">NN</span>
+                        </div>
+                        
+                        
+                      </div>
+
+                      <div class="wind-box-extra">
+                        <div class=" mt-1 p-1 rounded text-center">
+                          <h6>Air Quality</h6><span id="air-quality-status">Good</span>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid">
+                <p class="text-center fw-bold">Hourly Overview</p>
+                <div class="row p-1 rounded text-center d-flex justify-content-center">
+
+                  <div class="col-lg-2 col-md-4 mb-1">
+                    
+                    <div id="day-h-4" class="bg-primary h-100px d-flex justify-content-center align-items-center flex-column">
+                      <div class="day-info d-flex flex-column">
+                        <span>Monrning</span>
+                        <span>4:00 AM</span>
+                        <span class="day-h-status"></span>
+                        <img class="day-h-icon" src="" alt="">
+                      </div>
+                      <div class="day-temp">
+                        <span class="fw-bold day-h-max-temp"></span><span> °C</span>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+
+                  <div class="col-lg-2 col-md-4 mb-1">
+                    
+                    <div id="day-h-8" class="bg-primary h-100px d-flex justify-content-center align-items-center flex-column">
+                      <div class="day-info d-flex flex-column">
+                        <span>Monrning</span>
+                        <span>8:00 AM</span>
+                        <span class="day-h-status"></span>
+                        <img class="day-h-icon" src="" alt="">
+                      </div>
+                      <div class="day-temp">
+                        <span class="fw-bold day-h-max-temp"></span><span> °C</span>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+
+                  <div class="col-lg-2 col-md-4 mb-1">
+                    
+                    <div id="day-h-12" class="bg-primary h-100px d-flex justify-content-center align-items-center flex-column">
+                      <div class="day-info d-flex flex-column">
+                        <span>Afternoon</span>
+                        <span>12:00 PM</span>
+                        <span class="day-h-status"></span>
+                        <img class="day-h-icon" src="" alt="">
+                      </div>
+                      <div class="day-temp">
+                        <span class="fw-bold day-h-max-temp"></span><span> °C</span>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+
+                  <div class="col-lg-2 col-md-4 mb-1">
+                    
+                    <div id="day-h-16" class="bg-primary h-100px d-flex justify-content-center align-items-center flex-column">
+                      <div class="day-info d-flex flex-column">
+                        <span>Evening</span>
+                        <span>4:00 PM</span>
+                        <span class="day-h-status"></span>
+                        <img class="day-h-icon" src="" alt="">
+                      </div>
+                      <div class="day-temp">
+                        <span class="fw-bold day-h-max-temp"></span><span> °C</span>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+
+                  <div class="col-lg-2 col-md-4 mb-1">
+                    
+                    <div id="day-h-20" class="bg-primary h-100px d-flex justify-content-center align-items-center flex-column">
+                      <div class="day-info d-flex flex-column">
+                        <span>Evening</span>
+                        <span>8:00 PM</span>
+                        <span class="day-h-status"></span>
+                        <img class="day-h-icon" src="" alt="">
+                      </div>
+                      <div class="day-temp">
+                        <span class="fw-bold day-h-max-temp"></span><span> °C</span>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+
+                  <!-- <div class="col-lg-2 col-md-4 history-d-1">
+                    <div id="test2" class="bg-primary h-100px d-flex justify-content-center align-items-center flex-column">
+                      <div class="day-info d-flex flex-column">
+                        <span>2022-06-27</span>
+                        <span>Sunday</span>
+                        <span>Clear</span>
+                        <img class="" src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="">
+                      </div>
+                      <div class="day-temp">
+                        <span class="fw-bold">37°C</span>
+                        <span>15°C</span>
+                      </div>
+                    </div>
+                    
+                  </div> -->
+
+                  
+
+              </div>
+
+
+              
+            </div>
+          </div>
+          <!-- End left Main Section -->
+
+          <!-- Start Right Main Section -->
+          <div class="col-md-3 pt-4 right-section">
+
+            <div class="container text-center">
+
+              <div class="local-info d-flex flex-column justify-content-senter align-items-center">
+                
+                
+                <div class="m-1">
+                  <i class="fa-solid fa-map-location"></i>
+                  <span id="country-name">Qatar</span>
+                </div>
+                <div class="m-1">
+                  <i class="fa-solid fa-city"></i>
+                  <span id="city-name">Doha</span>
+                </div>
+                
+
+              </div>
+
+              <div class="local-time text-center mb-3">
+                <div class="m-1">
+                  <i class="fa-regular fa-clock"></i>
+                  <span id="local-time" class="fw-bold">2022-06-29 0:08</span>
+                </div>
+              </div>
+
+              <div class="sunset-sunrise text-center">
+                
+                <div class="pt-1">
+                  <span>Sun Rise</span>
+                  <i class="fa-regular fa-clock"></i>
+                  <span id="sunrise-time">04:46 AM</span>
+                </div>
+                <hr class="text-danger m-1">
+                <div class="pb-1">
+                  <span>Sun Set</span>
+                  <i class="fa-regular fa-clock"></i>
+                  <span id="sunset-time">06:28 PM</span>
+                </div>
+
+              </div>
+
+              <div class="uv-section d-flex justify-content-evenly align-items-center">
+                <div class="text-left">
+                  <i class="fa-solid fa-sun fs-1"></i>
+                </div>
+                <div>
+                  <span>UVI : <span id="uv-index">10</span></span><br>
+                  <span id="uv-status">Moderate</span>
+                </div>
+                
+                
+                
+              </div>
+
+              <div class="weather-box-extra mt-3 p-1">
+                <div class="wbe-wrap d-flex flex-column align-items-center">
+                        
+                  <div class="wbe wbe-pressure my-1 p-2 rounded ">
+                    <span>Pressure</span>
+                    <span><span id="pressure-mb">800</span> mb</span>
+                  </div>
+                  <div class=" wbe wbe-visibility my-1 p-2 rounded text-center">
+                    <span>Visibility </span>
+                    <span id="visibility-km">4.3</span><span> km</span>
+                  </div>
+                  <div class="wbe wbe-humadity p-2 my-1 rounded text-center">
+                    <span>Humadity</span>
+                    <span id="humidity-percent">80</span><span> %</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            
+          </div>
+          <!-- End Right Main Section -->
+          
+        </div>
+      </section>
+
+      <footer class="">
+        <div class="container text-white">
+          <div class="row ">
+            <div class="col-md-6">
+              <p>Copyright © 2022 , Raed Elnady</p>
+            </div>
+
+            <div class="col-md-6">
+              <div class="footer-social text-white text-center">
+                <a href="#"><i class="fa-brands fa-twitter text-white pe-3"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f text-white pe-3"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram text-white pe-3"></i></a>
+                <a href="#"><i class="fa-brands fa-dribbble text-white pe-3"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest text-white pe-3"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/main.js"></script>
+    </body>
+</html>
