@@ -23,7 +23,7 @@ let allData,
     
 function initAPI(targetCity){
   var httpRequest=new XMLHttpRequest();
-  httpRequest.open('GET',`http://api.weatherapi.com/v1/forecast.json?key=5c413e681c6145cb9a264149222706&q=${targetCity}&days=6&aqi=no&alerts=n`);
+  httpRequest.open('GET',`http://api.weatherapi.com/v1/forecast.json?key=5c413e681c6145cb9a264149222706&q=${targetCity}&days=6&aqi=no&alerts=n/`);
   httpRequest.send();
 
   httpRequest.addEventListener('readystatechange',function(){
